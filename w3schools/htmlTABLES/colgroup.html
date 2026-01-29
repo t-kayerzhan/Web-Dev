@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table Columns with colgroup</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Table Columns with &lt;colgroup&gt;</h1>
+
+<!-- Example 1: Collapse some columns -->
+<table>
+  <colgroup>
+    <col span="2"> <!-- первые 2 столбца обычные -->
+    <col span="3" style="visibility: collapse"> <!-- следующие 3 скрыты -->
+  </colgroup>
+  <tr>
+    <th>MON</th>
+    <th>TUE</th>
+    <th>WED</th>
+    <th>THU</th>
+    <th>FRI</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+  </tr>
+</table>
+
+<br>
+
+<!-- Example 2: Set background color for columns -->
+<table>
+  <colgroup>
+    <col span="3"> <!-- первые 3 столбца обычные -->
+    <col span="2" style="background-color: pink"> <!-- последние 2 розовые -->
+  </colgroup>
+  <tr>
+    <th>MON</th>
+    <th>TUE</th>
+    <th>WED</th>
+    <th>THU</th>
+    <th>FRI</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    <td>5</td>
+  </tr>
+</table>
+
+<!--
+SUMMARY:
+- <colgroup> → группирует столбцы для стилей
+- <col span="N"> → применяет стиль к N столбцам
+- style="visibility: collapse" → скрывает столбцы
+- style="background-color: color" → задаёт фон столбцов
+-->
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Links & Bookmarks</title>
+  <style>
+    /* Link colors */
+    a:link { color: green; text-decoration: none; }
+    a:visited { color: pink; text-decoration: none; }
+    a:hover { color: red; text-decoration: underline; }
+    a:active { color: yellow; text-decoration: underline; }
+    /* Button-style link */
+    .btn:link, .btn:visited {
+      background-color: #f44336; color: white; padding: 10px 20px; text-decoration: none; display: inline-block;
+    }
+    .btn:hover, .btn:active { background-color: red; }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Links & Bookmarks</h1>
+
+  <!-- Basic links -->
+  <a href="https://www.w3schools.com/">Visit W3Schools</a> |
+  <a href="https://www.w3schools.com/" target="_blank">Open in new tab</a>
+
+  <hr>
+
+  <!-- Absolute URLs -->
+  <h2>Absolute URLs</h2>
+  <a href="https://www.w3.org/">W3C</a>
+  <a href="https://www.google.com/">Google</a>
+
+  <!-- Relative URLs -->
+  <h2>Relative URLs</h2>
+  <a href="html_images.asp">HTML Images</a>
+  <a href="/css/default.asp">CSS Tutorial</a>
+
+  <!-- Image link -->
+  <p>
+    <a href="default.asp">
+      <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+    </a>
+  </p>
+
+  <!-- Email link -->
+  <a href="mailto:someone@example.com">Send email</a>
+
+  <!-- Button link -->
+  <a href="default.asp" class="btn">HTML Tutorial</a>
+
+  <hr>
+
+  <!-- Bookmark -->
+  <h2 id="C4">Chapter 4</h2>
+  <a href="#C4">Jump to Chapter 4</a>
+  <a href="html_demo.html#C4">Jump to Chapter 4 on another page</a>
+
+  <!-- Tooltip -->
+  <a href="https://www.w3schools.com/html/" title="Go to W3Schools HTML section">
+    Visit HTML Tutorial
+  </a>
+
+  <!--
+  SUMMARY:
+  - <a> = link
+  - href = link address
+  - target = where to open (_self, _blank, _parent, _top)
+  - Absolute / Relative URLs
+  - mailto: = email link
+  - <img> inside <a> = image link
+  - Button-style link via class
+  - Bookmark: use id + href="#id"
+  - Link colors: link, visited, hover, active
+  -->
+
+</body>
+</html>

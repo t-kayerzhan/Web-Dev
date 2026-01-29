@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Classes Example</title>
+<style>
+/* Определение класса */
+.city {
+  background-color: tomato;
+  color: white;
+  padding: 10px;
+}
+
+.note {
+  font-size: 120%;
+  color: red;
+}
+
+/* Один элемент может иметь несколько классов */
+.main {
+  border: 2px solid black;
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+
+<h1>HTML Classes Examples</h1>
+
+<!-- Класс применяется к заголовкам -->
+<h2 class="city">London</h2>
+<p>London is the capital of England.</p>
+
+<h2 class="city main">Paris</h2> <!-- несколько классов -->
+<p class="city">Paris is the capital of France.</p>
+
+<h2 class="city">Tokyo</h2>
+<p>Tokyo is the capital of Japan.</p>
+
+<!-- Класс можно использовать для span -->
+<h1>My <span class="note">Important</span> Heading</h1>
+<p>This is some <span class="note">important</span> text.</p>
+
+<!-- Скрипт для скрытия всех элементов с классом "city" -->
+<button onclick="hideCities()">Hide Cities</button>
+<script>
+function hideCities() {
+  var x = document.getElementsByClassName("city");
+  for (var i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+}
+</script>
+
+<!--
+SUMMARY:
+- class="name" → присвоение класса элементу
+- CSS: .name { ... } → стили для класса
+- Один элемент может иметь несколько классов: class="class1 class2"
+- getElementsByClassName("name") → JS для работы с классами
+-->
+
+</body>
+</html>
