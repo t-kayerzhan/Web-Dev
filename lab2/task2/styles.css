@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1c1e21;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 40px;
+    flex: 1;
+    width: 100%;
+}
+.logo {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+}
+.left {
+    flex: 1;
+    padding-top: 60px;
+    text-align: center;
+    font-size: medium;
+    font-family: sans-serif;
+}
+.right {
+    font-family: sans-serif;
+    border-left: 1px solid lightgray;
+    padding: 100px 40px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.right input{
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    margin-bottom: 12px;
+
+}
+.login{
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    margin-bottom: 12px;
+}
+.login {
+        transition: all 0.3s ease;
+    }
+    
+    /* Стиль для неактивной кнопки */
+    .login:disabled {
+        background-color: #4086cc;
+        color: #ffffff;
+        cursor: not-allowed;
+        border: 1px solid #b3d1ff;
+    }
+.right input:hover {
+    outline: none;
+    border-color: rgb(36, 43, 48);
+    box-shadow: 0 0 1px rgba(60, 73, 84, 0.5);
+}
+.right input:focus {
+    border-color: #0e0f11;
+    box-shadow: 0 0 0 px #3c4855;
+    outline: none;
+}    
+.login {
+    background-color: rgb(0, 136, 244);
+    color: white;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    margin-bottom: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+
+.login-part {
+    margin-bottom: 50px;
+}
+.login-part a {
+    display: block;
+    text-align: center;
+    color: #1c1e21;
+    text-decoration: none;
+    margin-top: 6px;
+}
+.login-part p {
+    margin-bottom: 10px;
+}
+.login-part a:hover {
+    text-decoration: underline;
+}
+.login {
+    background-color: rgb(0, 136, 244)  ;
+    color: white;
+    text-align: center;
+}
+.facebook {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+.facebook:hover {
+    background-color: rgba(114, 105, 105, 0.2);
+}
+.facebook a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1c1e21;
+    font-size: 14px;
+}
+.other-part button {
+    border-color: rgb(0, 136, 244);
+}
+.new-acc {
+    background-color: rgb(255, 255, 255);
+    color: rgb(69, 97, 218);
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid lightgray;
+    margin-bottom: 12px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.new-acc{
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+    outline: none;
+}
+
+.new-acc:hover{
+    background-color: rgba(114, 105, 105, 0.2);
+}
+.new-acc:active{
+    transform: scale(0.98); /* Уменьш на 2% */
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); 
+}
+.meta {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #1c1e21;
+    font-size: 14px;
+}
+.gradient{
+    background: linear-gradient(to right, orange, red, purple);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    display: inline;
+}
+.footer {
+    border-top: 1px solid lightgray;
+    padding: 20px;
+    color: gray;
+    text-decoration: None;
+    font-size: 12px;
+    text-align: center;
+}
+.footer a{
+    color: gray;
+    text-decoration: None;
+    margin: 8px;
+    font-size: 12px;
+}
+.footer a:hover{
+    text-decoration: underline;
+}
+.footer-links {
+    margin: 10px;
+}
+.language-selector select {
+    background: transparent;
+    border: none;
+    color: #8e8e8e;
+    font-size: 12px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    
+    /* Кастомная стрелка */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238e8e8e' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 20px;
+}
+.language-selector select:focus {
+    outline: none;
+}
