@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>08. Arrow Functions</title>
+</head>
+<body>
+    <h1>08. Arrow Functions</h1>
+
+    <script>
+        "use strict";
+
+        // ---------- 1. Arrow function examples ----------
+        let sum = (a, b) => a + b;
+        alert(`sum(1, 2) = ${sum(1, 2)}`); // 3
+
+        let sayHi = () => alert('Hello!');
+        sayHi();
+
+        let sum2 = (a, b) => {
+            let res = a + b;
+            return res;
+        };
+        alert(`sum2(1, 2) = ${sum2(1, 2)}`);
+
+        // ---------- 2. Ask task ----------
+        let ask = (question, yes, no) => {
+            if (confirm(question)) yes();
+            else no();
+        };
+
+        ask(
+            "Do you agree?",
+            () => alert("You agreed"),
+            () => alert("You canceled execution")
+        );
+
+        // ---------- 3. More examples ----------
+        let double = n => n * 2;
+        let add = (a, b) => a + b;
+        
+        alert(`double(5) = ${double(5)}`);  // 10
+        alert(`add(2, 3) = ${add(2, 3)}`);  // 5
+    </script>
+</body>
+</html>

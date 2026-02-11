@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pow Function - Implementation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+    pre { background: #f4f4f4; padding: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Pow Function - Implementation</h1>
+  <p>Implementation of pow function for testing:</p>
+  <pre>
+// Implementation of pow function for testing
+function pow(x, n) {
+  let result = 1;
+  
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+  
+  return result;
+}
+  </pre>
+  
+  <script>
+    function pow(x, n) {
+      let result = 1;
+      
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+      
+      return result;
+    }
+    
+    console.log(pow(2, 3)); // 8
+    console.log(pow(5, 2)); // 25
+  </script>
+</body>
+</html>

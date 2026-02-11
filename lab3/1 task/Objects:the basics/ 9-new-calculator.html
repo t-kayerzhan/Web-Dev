@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    // Constructor function Calculator
+    function Calculator() {
+        this.read = function() {
+            this.a = 5;
+            this.b = 3;
+        };
+
+        this.sum = function() {
+            return this.a + this.b;
+        };
+
+        this.mul = function() {
+            return this.a * this.b;
+        };
+    }
+
+    let calculator = new Calculator();
+    calculator.read();
+
+    alert("Sum = " + calculator.sum()); // 8
+    alert("Mul = " + calculator.mul()); // 15
+</script>

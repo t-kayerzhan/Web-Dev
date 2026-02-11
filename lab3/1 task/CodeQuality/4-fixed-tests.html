@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fixed Tests - Mocha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/10.2.0/mocha.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    pre { background: #f4f4f4; padding: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Fixed Tests - Properly Separated Test Cases</h1>
+  <pre>
+// Fixed tests - properly separated test cases
+describe("Raises x to power n", function() {
+  it("5 in the power of 1 equals 5", function() {
+    assert.equal(pow(5, 1), 5);
+  });
+
+  it("5 in the power of 2 equals 25", function() {
+    assert.equal(pow(5, 2), 25);
+  });
+
+  it("5 in the power of 3 equals 125", function() {
+    assert.equal(pow(5, 3), 125);
+  });
+});
+  </pre>
+  
+  <div id="mocha"></div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/10.2.0/mocha.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.3.10/chai.min.js"></script>
+  
+  <script>
+    // Setup
+    mocha.setup('bdd');
+    const assert = chai.assert;
+    
+    // Function to test
+    function pow(x, n) {
+      let result = 1;
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+      return result;
+    }
+    
+    // Fixed tests
+    describe("Raises x to power n", function() {
+      it("5 in the power of 1 equals 5", function() {
+        assert.equal(pow(5, 1), 5);
+      });
+
+      it("5 in the power of 2 equals 25", function() {
+        assert.equal(pow(5, 2), 25);
+      });
+
+      it("5 in the power of 3 equals 125", function() {
+        assert.equal(pow(5, 3), 125);
+      });
+    });
+    
+    // Run tests
+    mocha.run();
+  </script>
+</body>
+</html>

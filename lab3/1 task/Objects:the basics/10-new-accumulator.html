@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    // Constructor function Accumulator
+    function Accumulator(startingValue) {
+        this.value = startingValue;
+
+        this.read = function() {
+            this.value += 5;
+        };
+    }
+
+    let accumulator = new Accumulator(1); // initial value 1
+    
+    alert("Starting value: " + accumulator.value); // 1
+    
+    accumulator.read(); // adds 5
+    alert("After first read: " + accumulator.value); // 6
+    
+    accumulator.read(); // adds 5
+    alert("After second read: " + accumulator.value); // 11
+</script>
