@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>01. Basics</title>
+</head>
+<body>
+    <h1>01. JavaScript Basics</h1>
+    <p>Check dialog windows 👆</p>
+
+    <script>
+        "use strict";
+
+        // ---------- 1. Alert ----------
+        alert("I'm JavaScript!");
+
+        // ---------- 2. Variables ----------
+        let admin, name;
+        name = "John";
+        admin = name;
+        alert(admin); // John
+
+        let ourPlanet = "Earth";
+        let currentVisitor = "John";
+
+        const BIRTHDAY = '18.04.1982';
+        // const AGE = someCode(BIRTHDAY); // keep lowercase
+
+        // ---------- 3. Strings ----------
+        let userName = "Ilya";
+        alert(`hello ${1}`);        // hello 1
+        alert(`hello ${"name"}`);   // hello name
+        alert(`hello ${userName}`); // hello Ilya
+
+        // ---------- 4. Input ----------
+        let userInput = prompt("What is your name?", "");
+        alert(`Hello, ${userInput}!`);
+    </script>
+</body>
+</html>

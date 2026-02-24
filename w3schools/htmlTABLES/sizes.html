@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Table Sizes</title>
+  <style>
+    table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
+  </style>
+</head>
+<body>
+
+<h1>Table Sizes</h1>
+
+<!-- Full width table -->
+<table style="width:100%">
+  <tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr>
+  <tr><td>Jill</td><td>Smith</td><td>50</td></tr>
+  <tr><td>Eve</td><td>Jackson</td><td>94</td></tr>
+</table>
+
+<!-- Column width -->
+<table style="width:100%">
+  <tr><th style="width:70%">Firstname</th><th>Lastname</th><th>Age</th></tr>
+  <tr><td>Jill</td><td>Smith</td><td>50</td></tr>
+</table>
+
+<!-- Row height -->
+<table style="width:100%">
+  <tr><th>Firstname</th><th>Lastname</th><th>Age</th></tr>
+  <tr style="height:200px"><td>Jill</td><td>Smith</td><td>50</td></tr>
+</table>
+
+<!--
+SUMMARY:
+- table width → table style="width:100%"
+- column width → th style="width:70%"
+- row height → tr style="height:200px"
+-->
+
+</body>
+</html>

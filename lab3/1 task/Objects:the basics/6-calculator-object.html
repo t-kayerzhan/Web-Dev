@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    // Calculator object with read, sum, and mul methods
+    let calculator = {
+        sum() {
+            return this.a + this.b;
+        },
+
+        mul() {
+            return this.a * this.b;
+        },
+
+        read() {
+            this.a = 5;
+            this.b = 3;
+        }
+    };
+
+    calculator.read();
+    alert("a = " + calculator.a + ", b = " + calculator.b);
+    alert("Sum = " + calculator.sum()); // 8
+    alert("Mul = " + calculator.mul()); // 15
+</script>

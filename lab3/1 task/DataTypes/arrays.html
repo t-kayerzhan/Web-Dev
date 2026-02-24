@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    /*
+    TASK: Is array copied?
+    What is this code going to show?
+    */
+    let fruits = ["Apples", "Pear", "Orange"];
+    let shoppingCart = fruits;
+    shoppingCart.push("Banana");
+    alert(fruits.length); // 4 (arrays are objects, so shoppingCart is a reference, not a copy)
+
+    /*
+    TASK: Array operations
+    Create an array styles with items "Jazz" and "Blues"
+    */
+    let styles = ["Jazz", "Blues"];
+    alert(styles); // Jazz, Blues
+
+    // Append "Rock-n-Roll" to the end
+    styles.push("Rock-n-Roll");
+    alert(styles); // Jazz, Blues, Rock-n-Roll
+
+    // Replace the value in the middle with "Classics"
+    styles[Math.floor((styles.length - 1) / 2)] = "Classics";
+    alert(styles); // Jazz, Classics, Rock-n-Roll
+
+    // Strip off the first value of the array and show it
+    alert(styles.shift()); // Jazz
+    alert(styles); // Classics, Rock-n-Roll
+
+    // Prepend Rap and Reggae to the array
+    styles.unshift("Rap", "Reggae");
+    alert(styles); // Rap, Reggae, Classics, Rock-n-Roll
+
+    /*
+    TASK: Calling in an array context
+    What is the result? Why?
+    */
+    let arr = ["a", "b"];
+
+    arr.push(function() {
+        alert(this);
+    });
+
+    arr[2](); // a,b,function() { alert(this); } (this refers to the array arr)
+
+    /*
+    TASK: Sum input numbers
+    Write the function sumInput() that asks for values and returns sum
+    */
+    function sumInput() {
+        let numbers = [];
+        
+        while (true) {
+            let value = prompt("A number please?", 0);
+            
+            // Should we cancel?
+            if (value === "" || value === null || !isFinite(value)) break;
+            
+            numbers.push(+value);
+        }
+        
+        let sum = 0;
+        for (let number of numbers) {
+            sum += number;
+        }
+        return sum;
+    }
+
+    // Uncomment to test:
+    // alert(sumInput());
+
+    /*
+    TASK: A maximal subarray
+    Find the contiguous subarray with the maximal sum of items
+    O(n) solution - Kadane's algorithm
+    */
+    function getMaxSubSum(arr) {
+        let maxSum = 0;
+        let partialSum = 0;
+        
+        for (let item of arr) {
+            partialSum += item;
+            maxSum = Math.max(maxSum, partialSum);
+            if (partialSum < 0) partialSum = 0;
+        }
+        
+        return maxSum;
+    }
+
+    alert(getMaxSubSum([-1, 2, 3, -9])); // 5
+    alert(getMaxSubSum([2, -1, 2, 3, -9])); // 6
+    alert(getMaxSubSum([-1, 2, 3, -9, 11])); // 11
+    alert(getMaxSubSum([-2, -1, 1, 2])); // 3
+    alert(getMaxSubSum([100, -9, 2, -3, 5])); // 100
+    alert(getMaxSubSum([1, 2, 3])); // 6
+    alert(getMaxSubSum([-1, -2, -3])); // 0
+</script>

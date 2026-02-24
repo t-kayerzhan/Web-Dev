@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    // TASK: Translate border-left-width to borderLeftWidth
+    function camelize(str) {
+        return str.split('-').map((word, index) => 
+            index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+        ).join('');
+    }
+
+    alert(camelize("background-color")); // backgroundColor
+    alert(camelize("list-style-image")); // listStyleImage
+    alert(camelize("-webkit-transition")); // WebkitTransition
+
+    // TASK: Filter range
+    function filterRange(arr, a, b) {
+        return arr.filter(item => item >= a && item <= b);
+    }
+
+    let arr1 = [5, 3, 8, 1];
+    let filtered = filterRange(arr1, 1, 4);
+    alert(filtered); // 3,1
+    alert(arr1); // 5,3,8,1
+
+    // TASK: Filter range "in place"
+    function filterRangeInPlace(arr, a, b) {
+        for (let i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] < a || arr[i] > b) arr.splice(i, 1);
+        }
+    }
+
+    let arr2 = [5, 3, 8, 1];
+    filterRangeInPlace(arr2, 1, 4);
+    alert(arr2); // 3,1
+
+    // TASK: Sort in decreasing order
+    let arr3 = [5, 2, 1, -10, 8];
+    arr3.sort((a, b) => b - a);
+    alert(arr3); // 8,5,2,1,-10
+
+    // TASK: Copy and sort array
+    function copySorted(arr) {
+        return arr.slice().sort();
+    }
+
+    let arr4 = ["HTML", "JavaScript", "CSS"];
+    let sorted = copySorted(arr4);
+    alert(sorted); // CSS, HTML, JavaScript
+    alert(arr4); // HTML, JavaScript, CSS
+
+    // TASK: Create an extendable calculator
+    function Calculator() {
+        this.methods = {
+            "-": (a, b) => a - b,
+            "+": (a, b) => a + b
+        };
+
+        this.calculate = function(str) {
+            let [a, op, b] = str.split(' ');
+            a = +a;
+            b = +b;
+            return this.methods[op](a, b);
+        };
+
+        this.addMethod = function(name, func) {
+            this.methods[name] = func;
+        };
+    }
+
+    let calc = new Calculator;
+    alert(calc.calculate("3 + 7")); // 10
+
+    let powerCalc = new Calculator;
+    powerCalc.addMethod("*", (a, b) => a * b);
+    powerCalc.addMethod("/", (a, b) => a / b);
+    powerCalc.addMethod("**", (a, b) => a ** b);
+    alert(powerCalc.calculate("2 ** 3")); // 8
+
+    // TASK: Map to names
+    let john = { name: "John", age: 25 };
+    let pete = { name: "Pete", age: 30 };
+    let mary = { name: "Mary", age: 28 };
+    let users = [john, pete, mary];
+    let names = users.map(user => user.name);
+    alert(names); // John, Pete, Mary
+
+    // TASK: Map to objects
+    let john2 = { name: "John", surname: "Smith", id: 1 };
+    let pete2 = { name: "Pete", surname: "Hunt", id: 2 };
+    let mary2 = { name: "Mary", surname: "Key", id: 3 };
+    let users2 = [john2, pete2, mary2];
+    let usersMapped = users2.map(user => ({
+        fullName: `${user.name} ${user.surname}`,
+        id: user.id
+    }));
+    alert(usersMapped[0].id); // 1
+    alert(usersMapped[0].fullName); // John Smith
+
+    // TASK: Sort users by age
+    function sortByAge(users) {
+        users.sort((a, b) => a.age - b.age);
+    }
+
+    let john3 = { name: "John", age: 25 };
+    let pete3 = { name: "Pete", age: 30 };
+    let mary3 = { name: "Mary", age: 28 };
+    let arr5 = [pete3, john3, mary3];
+    sortByAge(arr5);
+    alert(arr5[0].name); // John
+    alert(arr5[1].name); // Mary
+    alert(arr5[2].name); // Pete
+
+    // TASK: Shuffle an array (Fisher-Yates)
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    let arr6 = [1, 2, 3];
+    shuffle(arr6);
+    alert(arr6);
+
+    // TASK: Get average age
+    function getAverageAge(users) {
+        return users.reduce((sum, user) => sum + user.age, 0) / users.length;
+    }
+
+    let john4 = { name: "John", age: 25 };
+    let pete4 = { name: "Pete", age: 30 };
+    let mary4 = { name: "Mary", age: 29 };
+    let arr7 = [john4, pete4, mary4];
+    alert(getAverageAge(arr7)); // 28
+
+    // TASK: Filter unique array members
+    function unique(arr) {
+        let result = [];
+        for (let item of arr) {
+            if (!result.includes(item)) result.push(item);
+        }
+        return result;
+    }
+
+    let strings = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare", "Hare", ":-O"];
+    alert(unique(strings)); // Hare, Krishna, :-O
+
+    // TASK: Create keyed object from array
+    function groupById(arr) {
+        return arr.reduce((obj, item) => {
+            obj[item.id] = item;
+            return obj;
+        }, {});
+    }
+
+    let users3 = [
+        {id: 'john', name: "John Smith", age: 20},
+        {id: 'ann', name: "Ann Smith", age: 24},
+        {id: 'pete', name: "Pete Peterson", age: 31},
+    ];
+    let usersById = groupById(users3);
+    alert(usersById.john.name); // John Smith
+    alert(usersById.ann.name); // Ann Smith
+    alert(usersById.pete.name); // Pete Peterson
+</script>

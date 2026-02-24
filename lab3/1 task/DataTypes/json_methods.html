@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    // TASK: Turn the object into JSON and back
+    let user = {
+        name: "John Smith",
+        age: 35
+    };
+
+    let json = JSON.stringify(user);
+    alert(json); // {"name":"John Smith","age":35}
+
+    let parsedUser = JSON.parse(json);
+    alert(parsedUser.name); // John Smith
+    alert(parsedUser.age); // 35
+
+    // TASK: Exclude backreferences
+    let room = {
+        number: 23
+    };
+
+    let meetup = {
+        title: "Conference",
+        occupiedBy: [{name: "John"}, {name: "Alice"}],
+        place: room
+    };
+
+    // circular references
+    room.occupiedBy = meetup;
+    meetup.self = meetup;
+
+    alert(JSON.stringify(meetup, function replacer(key, value) {
+        // Remove circular references
+        if (key === "occupiedBy" && value === meetup) return undefined;
+        if (key === "self" && value === meetup) return undefined;
+        return value;
+    }));
+
+    /* result:
+    {
+        "title":"Conference",
+        "occupiedBy":[{"name":"John"},{"name":"Alice"}],
+        "place":{"number":23}
+    }
+    */
+</script>

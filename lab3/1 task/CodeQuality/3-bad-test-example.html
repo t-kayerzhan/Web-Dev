@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bad Test Example - Mocha</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/10.2.0/mocha.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    pre { background: #f4f4f4; padding: 15px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Bad Test Example - All tests in one it block</h1>
+  <pre>
+// Bad test example - all tests in one it block
+describe("Raises x to power n", function() {
+  it("Raises x to the power n", function() {
+    let x = 5;
+    
+    let result = x;
+    assert.equal(pow(x, 1), result);
+    
+    result *= x;
+    assert.equal(pow(x, 2), result);
+    
+    result *= x;
+    assert.equal(pow(x, 3), result);
+  });
+});
+  </pre>
+  
+  <div id="mocha"></div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/10.2.0/mocha.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.3.10/chai.min.js"></script>
+  
+  <script>
+    // Setup
+    mocha.setup('bdd');
+    const assert = chai.assert;
+    
+    // Function to test
+    function pow(x, n) {
+      let result = 1;
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+      return result;
+    }
+    
+    // Bad test example
+    describe("Raises x to power n", function() {
+      it("Raises x to the power n", function() {
+        let x = 5;
+        
+        let result = x;
+        assert.equal(pow(x, 1), result);
+        
+        result *= x;
+        assert.equal(pow(x, 2), result);
+        
+        result *= x;
+        assert.equal(pow(x, 3), result);
+      });
+    });
+    
+    // Run tests
+    mocha.run();
+  </script>
+</body>
+</html>
