@@ -1,0 +1,9 @@
+<!-- Это кнопка из компонента Child, которая добавляет черепашку -->
+<app-child (addItemEvent)="addItem($event)" />
+
+<!-- А это список всех добавленных черепашек -->
+<div>
+  @for (item of items; track item) {
+    <span>{{ item }}</span>
+  }
+</div>
