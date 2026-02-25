@@ -1,0 +1,17 @@
+<main class="main">
+  <nav class="category-nav">
+    <app-category-list
+      [categories]="categories"
+      [selectedCategoryId]="selectedCategoryId"
+      (selectCategory)="onCategorySelect($event)"
+    />
+  </nav>
+
+  <section class="content">
+    @if (selectedCategoryId === null) {
+      <p class="empty-state">Выберите категорию</p>
+    } @else {
+      <app-product-list [products]="filteredProducts" />
+    }
+  </section>
+</main>
