@@ -1,1 +1,12 @@
-<p>The user's name is {{ name() }}</p>  <!-- со скобками -->
+<p>Username: {{ username }}</p>
+<p>Preferred Framework:</p>
+<ul>
+  <li>
+    Static Image:
+    <img ngSrc="logo.svg" alt="Angular logo" width="32" height="32" />  <!-- Убрали / -->
+  </li>
+  <li>
+    Dynamic Image:
+    <img [ngSrc]="logoUrl" [alt]="logoAlt" width="32" height="32" />
+  </li>
+</ul>
