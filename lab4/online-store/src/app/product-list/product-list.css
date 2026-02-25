@@ -1,0 +1,135 @@
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background: white;
+  transition: 0.3s;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card a {
+  text-decoration: none;
+  color: inherit;
+  font-family: sans-serif;
+  display: block;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+  display: block;
+  margin: 0 auto;
+  height: 200px;
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0 5px;
+}
+
+.product-card p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-size: 0.9rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+.product-card .price {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #2c3e50;
+}
+
+.rating {
+  color: #f39c12;
+  font-weight: 600;
+}
+
+.share {
+  margin-top: 8px;
+}
+
+.share summary {
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: #3498db;
+  list-style: none;
+}
+
+.share summary::-webkit-details-marker {
+  display: none;
+}
+
+.share-content {
+  margin-top: 8px;
+  background-color: #f9f9f9;
+  min-width: 130px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.share-content a {
+  display: block;
+  padding: 6px 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.share-content a:hover {
+  color: #3498db;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  padding: 15px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  min-width: 260px;
+}
