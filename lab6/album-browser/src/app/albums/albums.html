@@ -1,0 +1,19 @@
+<p>albums works!</p>
+<div class="albums-container">
+  <h2>📀 Все альбомы</h2>
+  
+  <div *ngIf="loading">Загрузка...</div>
+
+  <div *ngIf="!loading && albums.length > 0" class="albums-grid">
+    <div *ngFor="let album of albums" 
+         class="album-card" 
+         [routerLink]="['/albums', album.id]">
+      <div>
+        <span>#{{ album.id }}</span>
+        <h3>{{ album.title }}</h3>
+        <span>User ID: {{ album.userId }}</span>
+      </div>
+      <button class="delete-btn" (click)="deleteAlbum(album.id, $event)">🗑️</button>
+    </div>
+  </div>
+</div>
