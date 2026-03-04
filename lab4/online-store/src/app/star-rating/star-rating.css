@@ -1,0 +1,29 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #ddd;  /* пустая звезда - серая */
+  position: relative;
+  display: inline-block;
+}
+
+.star.full {
+  color: #f39c12;  /* полная - желтая */
+}
+
+.star.half {
+  background: linear-gradient(90deg, #f39c12 50%, #ddd 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rating-value {
+  margin-left: 5px;
+  font-size: 0.9rem;
+  color: #666;
+}

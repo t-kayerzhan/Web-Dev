@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>04. Logical Operators</title>
+</head>
+<body>
+    <h1>04. &&, ||, !</h1>
+    <p>Check console (F12) and dialogs 👆</p>
+
+    <script>
+        "use strict";
+
+        // ---------- 1. OR ----------
+        alert(null || 2 || undefined);        // 2
+        
+        let orAlert = alert(1) || 2 || alert(3);
+        alert(orAlert); // 1, then 2
+
+        // ---------- 2. AND ----------
+        alert(1 && null && 2);              // null
+        
+        let andAlert = alert(1) && alert(2);
+        alert(andAlert); // 1, then undefined
+
+        // ---------- 3. OR AND OR ----------
+        alert(null || 2 && 3 || 4);         // 3
+
+        // ---------- 4. Range checks ----------
+        let age = 25;
+        console.log("--- Range checks ---");
+        if (age >= 14 && age <= 90) console.log("In range");
+        if (!(age >= 14 && age <= 90)) console.log("Outside");
+        if (age < 14 || age > 90) console.log("Outside");
+
+        // ---------- 5. If questions ----------
+        if (-1 || 0) alert('first');        // runs
+        if (-1 && 0) alert('second');       // doesn't run
+        if (null || -1 && 1) alert('third'); // runs
+    </script>
+</body>
+</html>

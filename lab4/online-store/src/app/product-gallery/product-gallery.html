@@ -1,0 +1,17 @@
+<div class="gallery">
+  <div class="main-image-container">
+    <button class="nav-btn prev" (click)="prevImage()">←</button>
+    <img [src]="selectedImage" alt="Product image" class="main-image">
+    <button class="nav-btn next" (click)="nextImage()">→</button>
+  </div>
+  
+  <div class="thumbnails">
+    @for (image of images; track image) {
+      <img 
+        [src]="image" 
+        (click)="selectImage(image)"
+        [class.active]="selectedImage === image"
+        class="thumbnail">
+    }
+  </div>
+</div>

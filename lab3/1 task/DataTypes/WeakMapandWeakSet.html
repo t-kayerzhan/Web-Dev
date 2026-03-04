@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<script>
+    "use strict";
+
+    // TASK: Store "unread" flags
+    let messages = [
+        {text: "Hello", from: "John"},
+        {text: "How goes?", from: "John"},
+        {text: "See you soon", from: "Alice"}
+    ];
+
+    // Use WeakSet to store read status
+    let readMessages = new WeakSet();
+
+    // Mark messages as read
+    readMessages.add(messages[0]);
+    readMessages.add(messages[1]);
+
+    // Check if message was read
+    alert(readMessages.has(messages[0])); // true
+    alert(readMessages.has(messages[2])); // false
+
+    // When message is removed from array, it automatically disappears from WeakSet
+    messages.shift(); // remove first message
+    // readMessages will be cleaned automatically (garbage collected)
+
+    // TASK: Store read dates
+    // Use WeakMap to store read dates
+    let readDates = new WeakMap();
+
+    // Store date when message was read
+    readDates.set(messages[0], new Date(2024, 0, 1)); // first message read on Jan 1, 2024
+    readDates.set(messages[1], new Date());
+
+    // Get read date
+    alert(readDates.get(messages[0])); // Mon Jan 01 2024 ...
+    alert(readDates.get(messages[1])); // current date
+
+    // When message is removed from array, its read date automatically disappears
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>09. Extensible Calculator</title>
+</head>
+<body>
+    <h1>09. Calculator with addMethod</h1>
+    <p>Check console (F12) 👇</p>
+
+    <script>
+        "use strict";
+
+        // ---------- 1. Calculator constructor ----------
+        function Calculator() {
+            this.methods = {
+                "-": (a, b) => a - b,
+                "+": (a, b) => a + b
+            };
+
+            this.calculate = function(str) {
+                let split = str.split(' '),
+                    a = +split[0],
+                    op = split[1],
+                    b = +split[2];
+
+                if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+                    return NaN;
+                }
+
+                return this.methods[op](a, b);
+            };
+
+            this.addMethod = function(name, func) {
+                this.methods[name] = func;
+            };
+        }
+
+        // ---------- 2. Demo ----------
+        let calc = new Calculator();
+        
+        console.log("--- Calculator Demo ---");
+        console.log('calc.calculate("2 + 3") =', calc.calculate("2 + 3")); // 5
+        console.log('calc.calculate("10 - 4") =', calc.calculate("10 - 4")); // 6
+
+        calc.addMethod("*", (a, b) => a * b);
+        calc.addMethod("/", (a, b) => a / b);
+        calc.addMethod("**", (a, b) => a ** b);
+
+        console.log('calc.calculate("3 * 4") =', calc.calculate("3 * 4"));   // 12
+        console.log('calc.calculate("8 / 2") =', calc.calculate("8 / 2"));   // 4
+        console.log('calc.calculate("2 ** 3") =', calc.calculate("2 ** 3"));  // 8
+        
+        // Test with alert
+        alert(`2 + 3 = ${calc.calculate("2 + 3")}`);
+        alert(`3 * 4 = ${calc.calculate("3 * 4")}`);
+    </script>
+</body>
+</html>

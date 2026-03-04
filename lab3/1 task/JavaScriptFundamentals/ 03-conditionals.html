@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>03. Conditionals</title>
+</head>
+<body>
+    <h1>03. if, else, ternary operator</h1>
+
+    <script>
+        "use strict";
+
+        // ---------- 1. String in if ----------
+        if ("0") {
+            alert('Hello! String "0" is truthy');
+        }
+
+        // ---------- 2. JavaScript name ----------
+        let jsName = prompt('What is the "official" name of JavaScript?', '');
+        alert(jsName == 'ECMAScript' ? 'Right!' : "You don't know? ECMAScript!");
+
+        // ---------- 3. Number sign ----------
+        let number = prompt('Type a number', 0);
+        alert(number > 0 ? 1 : number < 0 ? -1 : 0);
+
+        // ---------- 4. Rewrite if to ternary ----------
+        let a = 2, b = 3;
+        let result = (a + b < 4) ? 'Below' : 'Over';
+        alert(`Result: ${result}`);
+
+        let login = 'Employee';
+        let message = (login == 'Employee') ? 'Hello' :
+                      (login == 'Director') ? 'Greetings' :
+                      (login == '') ? 'No login' : '';
+        alert(`Message: ${message}`);
+
+        // ---------- 5. Login check ----------
+        let userName = prompt("Who's there?", '');
+
+        if (userName === 'Admin') {
+            let pass = prompt('Password?', '');
+            alert(pass === 'TheMaster' ? 'Welcome!' :
+                  (pass === '' || pass === null) ? 'Canceled' : 'Wrong password');
+        } else if (userName === '' || userName === null) {
+            alert('Canceled');
+        } else {
+            alert("I don't know you");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<div class="comments">
+  <h3>Comments</h3>
+  @for (comment of comments; track comment.id) {
+    <div class="comment">
+      <p>{{ comment.text }}</p>
+      <small>- {{ comment.author }}</small>
+    </div>
+  }
+</div>
