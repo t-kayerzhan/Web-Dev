@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Table Borders</title>
+  <style>
+    /* Общие границы для таблицы, заголовков и ячеек */
+    table, th, td {
+      border: 1px solid black;    /* цвет и стиль границы */
+      border-collapse: collapse;  /* объединяем границы */
+      border-radius: 5px;         /* скругление углов */
+    }
+
+    /* Цвет фона заголовков и ячеек */
+    th, td {
+      background-color: #96D4D4;
+      padding: 8px;               /* отступ внутри ячеек */
+    }
+
+    /* Пример пунктирной границы */
+    .dotted td, .dotted th {
+      border-style: dotted;
+      border-color: #96D4D4;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Table Borders Examples</h1>
+
+<!-- Простая таблица с черными границами -->
+<table>
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+    <th>Header 3</th>
+  </tr>
+  <tr>
+    <td>Data 1</td>
+    <td>Data 2</td>
+    <td>Data 3</td>
+  </tr>
+</table>
+
+<!-- Таблица с пунктирными цветными границами -->
+<table class="dotted">
+  <tr>
+    <th>Item</th>
+    <th>Price</th>
+    <th>Quantity</th>
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>$1</td>
+    <td>10</td>
+  </tr>
+</table>
+
+<!--
+SUMMARY:
+- border: sets width, style, color
+- border-collapse: collapse borders
+- border-radius: rounded corners
+- border-style: solid, dotted, dashed, etc.
+- border-color: sets only the color
+-->
+
+</body>
+</html>

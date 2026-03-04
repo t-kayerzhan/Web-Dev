@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ID Example</title>
+<style>
+/* Стили для уникального элемента с id */
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Стили для элементов с классом "city" */
+.city {
+  background-color: tomato;
+  color: white;
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+
+<h1 id="myHeader">My Cities</h1>
+
+<!-- Кнопка для изменения текста через JS -->
+<button onclick="displayResult()">Change Header</button>
+
+<h2 class="city">London</h2>
+<p>London is the capital of England.</p>
+
+<h2 class="city">Paris</h2>
+<p>Paris is the capital of France.</p>
+
+<h2 class="city">Tokyo</h2>
+<p>Tokyo is the capital of Japan.</p>
+
+<!-- Пример использования id для закладки -->
+<h2 id="C4">Chapter 4</h2>
+<p>
+  <a href="#C4">Jump to Chapter 4 (same page)</a><br>
+  <a href="html_demo.html#C4">Jump to Chapter 4 (another page)</a>
+</p>
+
+<script>
+function displayResult() {
+  document.getElementById("myHeader").innerHTML = "Have a nice day!";
+}
+</script>
+
+<!--
+SUMMARY:
+- id="name" → уникальный идентификатор элемента
+- CSS: #name { ... } → стиль для id
+- JS: getElementById("name") → доступ к элементу
+- Можно использовать id для закладок: <a href="#id">Jump</a>
+- class → для групп элементов, id → уникальный элемент
+-->
+
+</body>
+</html>

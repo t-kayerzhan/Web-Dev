@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Images</title>
+  <style>
+    /* Background image example */
+    body {
+      background-image: url('img_girl.jpg');
+      background-repeat: no-repeat; /* no repeating */
+      background-attachment: fixed; /* stays when scrolling */
+      background-size: cover;       /* covers whole area */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Images</h1>
+
+  <!-- Basic image -->
+  <img src="pic_trulli.jpg" alt="Italian Trulli">
+
+  <!-- Image with width and height -->
+  <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+
+  <!-- Image as link -->
+  <a href="default.asp">
+    <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+  </a>
+
+  <!-- Floating images -->
+  <p><img src="smiley.gif" alt="Smiley" style="float:right;width:42px;height:42px;">Text floats around the image</p>
+  <p><img src="smiley.gif" alt="Smiley" style="float:left;width:42px;height:42px;">Text floats around the image</p>
+
+  <!-- Image map -->
+  <img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+  <map name="workmap">
+    <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+    <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+    <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm" onclick="alert('You clicked the coffee cup!')">
+  </map>
+
+  <!-- Responsive images using picture -->
+  <picture>
+    <source media="(min-width:650px)" srcset="img_food.jpg">
+    <source media="(min-width:465px)" srcset="img_car.jpg">
+    <img src="img_girl.jpg" alt="Girl">
+  </picture>
+
+  <!--
+  SUMMARY:
+  - <img>      → defines an image
+  - src        → image URL
+  - alt        → alternative text if image not found
+  - width / height → set image size
+  - <a><img></a> → image as link
+  - float      → float image left/right
+  - <map> + <area> → clickable image areas
+  - <picture>  → multiple image sources for responsiveness
+  - background-image → set image as background
+  - background-repeat / background-size / background-attachment → control background
+  -->
+
+</body>
+</html>
